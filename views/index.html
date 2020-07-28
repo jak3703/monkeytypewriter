@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="index.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <audio autoplay loop>
+            <source src="../assets/monkeynoises.ogg" type="audio/ogg">
+        </audio>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h2>Debrah</h2>
+                <img src="https://media0.giphy.com/media/l0HU7GmObZ2BtYZvW/source.gif" width="300" height="300">
+                <br><textarea id="debrah" disabled></textarea>
+            </div>
+            <div class="grid-item tyler">
+                <h2>Tyler</h2>
+                <img src="https://media0.giphy.com/media/l0HU7GmObZ2BtYZvW/source.gif" width="300" height="300">
+                <br><textarea id="tyler" disabled></textarea>
+            </div>
+            <div class="grid-item">
+                <h2>Anita</h2>
+                <img src="https://media0.giphy.com/media/l0HU7GmObZ2BtYZvW/source.gif" width="300" height="300">
+                <br><textarea id="anita" disabled></textarea>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function (){
+                window.setInterval(function(){
+                    $('#debrah').val(generateRandStr());
+                    $('#tyler').val(generateRandStr());
+                    $('#anita').val(generateRandStr());
+                }, 17000);
+            });
+
+            function generateRandStr(){
+                let randStr = "";
+                const chars = ' ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                for(let i = 0; i < 500; i++){
+                    let randCharCode = Math.floor((Math.random() * chars.length));
+                    if(Math.random() <= 0.05){
+                        randCharCode = 0; //extra chance for space
+                    }
+                    randStr += chars.charAt(randCharCode);
+                }
+                return randStr;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+div.grid-container{
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+div.grid-item{
+    text-align: center;
+}
+
+.tyler{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+body{
+    vertical-align: middle;
+    background-color: coral;
+    text-align: center;
+}
+
+textarea{
+    margin: 20px;
+    width: 20em;
+    height: 30em;
+    resize: none;
+}

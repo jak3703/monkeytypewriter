@@ -2,8 +2,8 @@ const express = require('express');
 
 const app = express();
 
-app.get('/', function(){
-    
+app.get('/', function(req, res){
+    res.sendFile('./views/index.html');
 });
 
 const PORT = process.env.PORT || 3000;
